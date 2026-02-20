@@ -1,0 +1,185 @@
+.App {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg: #fafafa;
+  --fg: #333;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --card-bg: #fff;
+}
+
+body.dark {
+  --bg: #121212;
+  --fg: #e0e0e0;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --input-bg: #1e1e1e;
+  --input-border: #444;
+  --card-bg: #1e1e1e;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin: 0;
+}
+
+.header-controls,
+.filters {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-controls {
+  justify-content: flex-end;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+}
+
+.transaction-form,
+.transaction-list,
+.charts {
+  margin-bottom: 2rem;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-form button {
+  margin: 0.25rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--fg);
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background 0.2s;
+  min-width: 120px;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.transaction-list {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.transaction-list th,
+.transaction-list td {
+  border-bottom: 1px solid var(--input-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.transaction-list th {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.transaction-list tr:hover td {
+  background: rgba(0,0,0,0.03);
+}
+
+body.dark .transaction-list tr:hover td {
+  background: rgba(255,255,255,0.05);
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+/* responsive tweaks */
+@media (max-width: 600px) {
+  .transaction-form input,
+  .transaction-form select,
+  .transaction-form button,
+  .filters input,
+  .filters select {
+    flex: 1 1 100%;
+  }
+}
+
+.chart {
+  flex: 1 1 300px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--fg);
+}
+
+/* dark mode */
+body.dark {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark .transaction-list th,
+body.dark .transaction-list td {
+  border-color: #444;
+}
+
+body.dark .transaction-form input,
+body.dark .transaction-form select,
+body.dark .transaction-form button,
+body.dark .controls button,
+body.dark .filters select,
+body.dark .filters input {
+  background: #333;
+  color: #ddd;
+  border: 1px solid #555;
+}

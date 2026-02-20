@@ -124,11 +124,11 @@ new Chart(ctx, {
 
 ## 🔮 Future Improvements
 
-- [ ] Export data as CSV
+- [x] Export data as CSV (React version)
 - [ ] Monthly budget limit with alerts
-- [ ] Dark mode toggle
+- [x] Dark mode toggle (React version)
 - [ ] Multi-currency support
-- [ ] Filter by date range or category
+- [x] Filter by date range or category (React version)
 
 ---
 
